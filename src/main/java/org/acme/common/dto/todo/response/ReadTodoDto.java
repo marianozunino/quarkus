@@ -1,13 +1,14 @@
 package org.acme.common.dto.todo.response;
 
 public class ReadTodoDto {
-    private String title;
 
-    public String getTitle() {
-        return title;
-    }
+  private String title;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
 }

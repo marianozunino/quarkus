@@ -5,7 +5,6 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-
 import org.acme.common.dto.todo.request.CreateTodoDto;
 import org.acme.common.dto.todo.response.ReadTodoDto;
 import org.acme.service.TodoService;
@@ -14,15 +13,15 @@ import org.acme.service.TodoService;
 @ApplicationScoped
 public class TodoController {
 
-    private final TodoService todoService;
+  private final TodoService todoService;
 
-    public TodoController(TodoService todoService) {
-        this.todoService = todoService;
-    }
+  public TodoController(TodoService todoService) {
+    this.todoService = todoService;
+  }
 
-    @POST
-    @Transactional
-    public ReadTodoDto createTodo(@Valid CreateTodoDto createTodoDto) {
-        return todoService.createTodo(createTodoDto);
-    }
+  @POST
+  @Transactional
+  public ReadTodoDto createTodo(@Valid CreateTodoDto createTodoDto) {
+    return todoService.createTodo(createTodoDto);
+  }
 }
