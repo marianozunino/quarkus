@@ -1,16 +1,16 @@
 package org.acme.controller;
 
-import org.acme.common.dto.todo.response.TodoDto;
+import javax.enterprise.context.ApplicationScoped;
+import javax.transaction.Transactional;
+import javax.validation.Valid;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+
+import org.acme.common.dto.todo.request.CreateTodoDto;
+import org.acme.common.dto.todo.response.ReadTodoDto;
 import org.acme.service.TodoService;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import java.util.*;
-
 @Path("/quarks")
-@Produces(MediaType.APPLICATION_JSON)
-@Consumes(MediaType.APPLICATION_JSON)
 @ApplicationScoped
 public class TodoController {
 
@@ -20,8 +20,9 @@ public class TodoController {
         this.todoService = todoService;
     }
 
-    @GET
-    public List<TodoDto> list() {
-        return todoService.getTodos();
+    @POST
+    @Transactional
+    public ReadTodoDto createTodo(@Valid CreateTodoDto createTodoDto) {
+        return todoService.createTodo(createTodoDto);
     }
 }

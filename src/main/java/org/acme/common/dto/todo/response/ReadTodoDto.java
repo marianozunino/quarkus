@@ -1,6 +1,6 @@
 package org.acme.common.dto.todo.response;
 
-public class TodoDto {
+public class ReadTodoDto {
     private String title;
 
     public String getTitle() {
