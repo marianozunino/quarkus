@@ -6,6 +6,7 @@ import javax.persistence.*;
 import org.hibernate.annotations.Type;
 
 @Entity
+@Table(name = "todo")
 public class Todo extends PanacheEntityBase {
 
   @Id

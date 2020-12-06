@@ -1,0 +1,32 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    username: postgres
+    password: dockre
+    jdbc:
+      url: jdbc:postgresql://localhost:5432/quarkus-demo
+  hibernate-orm:
+    database:
+      generation: 
+        create-schemas: false
+    log:
+      sql: true
+      format-sql: true
+  flyway:
+    migrate-at-start: true
+  swagger-ui:
+    always-include: true
+    path: /swagger
+
+"%test":
+  quarkus:
+    datasource:
+      db-kind: postgresql
+      jdbc:
+        driver: org.testcontainers.jdbc.ContainerDatabaseDriver
+        url: jdbc:tc:postgresql:latest:///quarkus-demo
+    hibernate-orm:
+      dialect: org.hibernate.dialect.PostgreSQL9Dialect
+      database:
+        generation:
+          create-schemas: false
