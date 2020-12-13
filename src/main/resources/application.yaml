@@ -2,12 +2,12 @@ mp:
   jwt:
     verify:
       publickey:
-        location: /META-INF/publickey.pem
+        location: /META-INF/resources/publickey.pem
       issuer: https://example.com/issuer
 smallrye:
   jwt:
     sign:
-      key-location: /META-INF/privatekey.pem
+      key-location: /META-INF/resources/privatekey.pem
   
 quarkus:
   datasource:
@@ -15,7 +15,7 @@ quarkus:
     username: postgres
     password: docker
     jdbc:
-      url: jdbc:postgresql://localhost:5432/quarkus-demo
+      url: jdbc:postgresql://main:5432/quarkus-demo
   hibernate-orm:
     database:
       generation: 
