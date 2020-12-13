@@ -29,7 +29,7 @@ public class TodoServiceImpl implements TodoService {
   @Override
   public ReadTodoDto createTodo(CreateTodoDto createTodoDto) {
     try {
-      var todo = todoMapper.toSource(createTodoDto);
+      var todo = todoMapper.toModel(createTodoDto);
       todoRepository.persistAndFlush(todo);
       return todoMapper.toResource(todo);
     } catch (PersistenceException p) {
