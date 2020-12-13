@@ -1,6 +1,5 @@
 package org.acme.repository;
 
-import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import io.quarkus.panache.common.Page;
 import java.util.List;
 import javax.enterprise.context.ApplicationScoped;
@@ -9,7 +8,7 @@ import org.acme.model.Todo;
 
 @ApplicationScoped
 @Transactional
-public class TodoRepository implements PanacheRepository<Todo> {
+public class TodoRepository implements BaseRepository<Todo> {
 
   public Todo findByTitle(String title) {
     return find("title", title).firstResult();

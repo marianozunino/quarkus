@@ -13,5 +13,6 @@ public interface TodoMapper {
   List<ReadTodoDto> toList(List<Todo> todos);
 
   @Mapping(target = "completed", constant = "false")
+  @Mapping(target = "deletedAt", constant = "null")
   Todo toModel(CreateTodoDto createTodoDto);
 }

@@ -1,18 +1,10 @@
 package org.acme.model;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
-import java.util.UUID;
 import javax.persistence.*;
-import org.hibernate.annotations.Type;
 
 @Entity
 @Table(name = "todo")
-public class Todo extends PanacheEntityBase {
-
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  @Type(type = "pg-uuid")
-  private UUID id;
+public class Todo extends BaseModel {
 
   @Column(unique = true)
   public String title;
