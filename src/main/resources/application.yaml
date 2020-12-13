@@ -1,3 +1,14 @@
+mp:
+  jwt:
+    verify:
+      publickey:
+        location: /META-INF/publickey.pem
+      issuer: https://example.com/issuer
+smallrye:
+  jwt:
+    sign:
+      key-location: /META-INF/privatekey.pem
+  
 quarkus:
   datasource:
     db-kind: postgresql

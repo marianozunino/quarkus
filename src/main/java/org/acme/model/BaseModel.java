@@ -15,5 +15,5 @@ public abstract class BaseModel extends PanacheEntityBase {
   private UUID id;
 
   @Column(name = "deleted_at", nullable = true)
-  public Date deletedAt;
+  public Date deletedAt = null;
 }
